@@ -156,13 +156,17 @@ p {
 
 .avatar-box {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .avatar-box img {
     width: 100%;
     border-radius: var(--border-radius);
     background-color: rgba(22, 22, 22, 0.671);
+}
+
+.info-list-responsive {
+    display: none;
 }
 
 .info-list {
@@ -180,16 +184,15 @@ p {
     text-overflow: ellipsis; 
 }
 
-.info-list div span {
+.info-list div span, .info-list-responsive div span {
     font-weight: 500;
     color: var(--text-color);
 }
 
-.info-list div a {
+.info-list div a, .info-list-responsive div a {
     color: var(--text-color);
     text-decoration: none;
 }
-
 
 .icon-box {
     display: flex;
@@ -198,6 +201,7 @@ p {
     margin-right: 1rem;
     height: 3rem;
     width: 3rem;
+    min-width: 3rem;
     border-radius: var(--border-radius);
     color: white;
     background-color: var(--color-primary);
@@ -239,7 +243,6 @@ li {
 
 .portfolio img {
     width: 100%;
-    height: 180px;
     background-color: gainsboro;
     border-radius: var(--border-radius);
 }
@@ -260,4 +263,41 @@ li {
     height: 0.5rem;
     border-radius: 1rem;
     background-color: var(--color-primary);
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1400px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .container { margin: 1rem auto; }
+    .col { margin: 0.5rem 0px;}
+    .col-3  { flex: 0 0 100%; max-width: 100%; }
+    .col-4  { flex: 0 0 50%; max-width: 50%; }
+    .col-6  { flex: 0 0 100%; max-width: 100%; }
+    .col-9  { flex: 0 0 100%; max-width: 100%; }  
+    
+    .info-list-responsive { display: flex; }
+    .info-list { display: none; } 
+}
+
+@media (max-width: 768px) {
+    .col-3  { flex: 0 0 100%; max-width: 100%; }
+    .col-6  { flex: 0 0 100%; max-width: 100%; }
+    .col-9  { flex: 0 0 100%; max-width: 100%; }  
+    
+    .info-list-responsive { display: none; }
+    .info-list { display: block; } 
+}
+
+@media (max-width: 650px) {
+    .col-3  { flex: 0 0 100%; max-width: 100%; }
+    .col-4  { flex: 0 0 100%; max-width: 100%; }
+    .col-6  { flex: 0 0 100%; max-width: 100%; }
+    .col-9  { flex: 0 0 100%; max-width: 100%; }    
 }
